@@ -7,7 +7,7 @@ const Button = (props) => {
         console.log('Button')
       }}
     >
-      {props.title}
+      {props.label}
     </button>
   )
 }
