@@ -6,7 +6,6 @@
 // * view modes: compact, detailed
 const User = (props) => {
   const { viewMode } = props
-  console.log(viewMode)
   const {
     userData: { avatar, nickname, lastOnline },
   } = props
