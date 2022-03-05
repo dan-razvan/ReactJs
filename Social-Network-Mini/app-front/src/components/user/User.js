@@ -4,11 +4,7 @@
 // User Component:
 // * user data
 // * view modes: compact, detailed
-const User = (props) => {
-  const { viewMode } = props
-  const {
-    userData: { avatar, nickname, lastOnline },
-  } = props
+const User = ({ userData: { avatar, nickname, lastOnline }, viewMode }) => {
   if (viewMode === 'detailed') {
     return (
       <div className="User">

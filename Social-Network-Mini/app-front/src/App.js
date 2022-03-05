@@ -3,7 +3,7 @@ import User from './components/user/User'
 const App = () => (
   <div className="App">
     <User
-      viewMode={'compact'}
+      viewMode={'detailed'}
       userData={{
         avatar: '/images/avatar1.png',
         nickname: 'John Doe',
