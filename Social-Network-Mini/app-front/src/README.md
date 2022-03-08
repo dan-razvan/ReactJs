@@ -1,3 +1,3 @@
 # Mini Social
 
-![button-demo](assets/button.gif)
+![button-demo](./assets/button.gif)
