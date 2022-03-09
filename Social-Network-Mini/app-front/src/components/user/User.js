@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react'
 
 // constructor
-const User = ({ userData: { avatar, nickname, lastOnline }, viewMode }) => {
+const User = ({
+  userData: { avatar, nickname, lastOnline },
+  viewMode,
+  onClickHandler,
+}) => {
   const [online, setOnline] = useState()
 
   useEffect(() => {
@@ -23,12 +27,18 @@ const User = ({ userData: { avatar, nickname, lastOnline }, viewMode }) => {
       {viewMode === 'compact' ? (
         <div>
           <img src={avatar} alt="avatar" style={{ width: '80px' }} />
+          <button className="button" onClick={() => onClickHandler('detailed')}>
+            Show More
+          </button>
         </div>
       ) : (
         <div>
           <img src={avatar} alt="avatar" />
           <h2>{nickname}</h2>
           <p>{lastOnline}</p>
+          <button className="button" onClick={() => onClickHandler('compact')}>
+            Show Less
+          </button>
         </div>
       )}
 
