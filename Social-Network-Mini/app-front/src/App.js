@@ -4,16 +4,6 @@ import { useState } from 'react'
 const App = () => {
   const [display, setDisplay] = useState('detailed')
 
-  // const onClickHandler = () => {
-  //   if (display === 'compact') {
-  //     setDisplay('detailed')
-  //     setButton('show less')
-  //   }
-  //   if (display === 'detailed') {
-  //     setDisplay('compact')
-  //     setButton('show more')
-  //   }
-  // }
   return (
     <div className="App">
       <User
