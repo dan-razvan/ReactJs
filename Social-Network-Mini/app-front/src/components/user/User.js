@@ -1,19 +1,11 @@
 import { useEffect, useState } from 'react'
 
 // constructor
-const User = ({
-  userData: { avatar, nickname, lastOnline },
-  viewMode,
-  onClickHandler,
-}) => {
+const User = ({ userData: { avatar, nickname, lastOnline } }) => {
   const [online, setOnline] = useState()
-
+  const [viewMode, setViewMode] = useState('detailed')
+  // const onClickHandler = () => setViewMode
   useEffect(() => {
-    // console.info('User component did mount or update')
-    // setTimeout(() => {
-    //   setOnline(!online)
-    //   console.info(`The user is ${online ? 'online' : 'offline'}`)
-    // }, 2000)
     if (viewMode === 'compact') {
       setOnline(false)
     }
@@ -27,7 +19,7 @@ const User = ({
       {viewMode === 'compact' ? (
         <div>
           <img src={avatar} alt="avatar" style={{ width: '80px' }} />
-          <button className="button" onClick={() => onClickHandler('detailed')}>
+          <button className="button" onClick={() => setViewMode('detailed')}>
             Show More
           </button>
         </div>
@@ -36,7 +28,7 @@ const User = ({
           <img src={avatar} alt="avatar" />
           <h2>{nickname}</h2>
           <p>{lastOnline}</p>
-          <button className="button" onClick={() => onClickHandler('compact')}>
+          <button className="button" onClick={() => setViewMode('compact')}>
             Show Less
           </button>
         </div>
