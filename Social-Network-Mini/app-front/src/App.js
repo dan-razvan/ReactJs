@@ -5,7 +5,7 @@ const App = () => {
   return (
     <div className="App">
       <User
-        // viewMode={'detailed'}
+        viewMode={'compact'}
         userData={{
           avatar: '/images/avatar1.png',
           nickname: 'John Doe',

@@ -1,22 +1,22 @@
 import { useEffect, useState } from 'react'
 
 // constructor
-const User = ({ userData: { avatar, nickname, lastOnline } }) => {
+const User = ({ userData: { avatar, nickname, lastOnline }, viewMode }) => {
   const [online, setOnline] = useState()
-  const [viewMode, setViewMode] = useState('detailed')
+  const [display, setViewMode] = useState(viewMode)
   // const onClickHandler = () => setViewMode
   useEffect(() => {
-    if (viewMode === 'compact') {
+    if (display === 'compact') {
       setOnline(false)
     }
-    if (viewMode === 'detailed') {
+    if (display === 'detailed') {
       setOnline(true)
     }
-  }, [viewMode])
+  }, [display])
 
   return (
     <div className="User">
-      {viewMode === 'compact' ? (
+      {display === 'compact' ? (
         <div>
           <img src={avatar} alt="avatar" style={{ width: '80px' }} />
           <button className="button" onClick={() => setViewMode('detailed')}>
