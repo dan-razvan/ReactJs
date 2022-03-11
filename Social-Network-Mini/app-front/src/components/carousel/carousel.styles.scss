@@ -1,0 +1,19 @@
+.carousel-container {
+  height: 200px;
+  width: 550px;
+
+  .carousel-elements {
+    height: 80%;
+    // width: 150px;
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+
+    .element {
+      height: 100%;
+      width: 100%;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+}
